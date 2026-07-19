@@ -10,6 +10,7 @@ import { Register } from "./pages/Register"
 import { AdminDashboard } from "./pages/AdminDashboard"
 import { ProtectedRoute } from "./components/ProtectedRoute"
 
+/** Main app file */
 export default function App() {
 	return (
 		<ConfigProvider
