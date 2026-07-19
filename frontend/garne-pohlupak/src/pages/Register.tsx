@@ -30,7 +30,7 @@ export const Register: React.FC = () => {
 	return (
 		<div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#F8C663] to-[#F87C63] p-4">
 			<motion.div
-				className="bg-[url(/public/assets/shevica.png)] bg-[#F8C663] bg-size-[110px] bg-repeat-x absolute top-0 w-full h-[5vh]"
+				className="bg-[url(/assets/shevica.png)] bg-[#F8C663] bg-size-[110px] bg-repeat-x absolute top-0 w-full h-[5vh]"
 				animate={{ backgroundPositionX: ["0px", "110px"] }}
 				transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
 			/>

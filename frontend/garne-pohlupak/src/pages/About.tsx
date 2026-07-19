@@ -68,7 +68,7 @@ export const About: React.FC = () => {
 					</div>
 					<div className="bg-slate-200 rounded-2xl overflow-hidden aspect-square lg:aspect-auto">
 						<img
-							src="/public/assets/logo.png"
+							src="/assets/logo.png"
 							alt="Нашата работилница"
 							className="w-full h-full object-cover"
 						/>

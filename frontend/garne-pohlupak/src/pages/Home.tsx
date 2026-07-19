@@ -47,14 +47,14 @@ export const Home: React.FC = () => {
 			name: "Традиционно гърне 5л",
 			price: 45.0,
 			quantity: 1,
-			image: "/public/assets/logo.png",
+			image: "/assets/logo.png",
 		},
 		{
 			id: 2,
 			name: "Паничка за лечо 2л",
 			price: 32.0,
 			quantity: 2,
-			image: "/public/assets/logo.png",
+			image: "/assets/logo.png",
 		},
 	])
 	const [products, setProducts] = React.useState<Product[]>([])
@@ -172,7 +172,7 @@ export const Home: React.FC = () => {
 	return (
 		<div>
 			<motion.div
-				className="bg-[url(/public/assets/shevica.png)] bg-[#F8C663] bg-size-[110px] bg-repeat-x bg-center w-full h-[5vh] p-0 mb-6"
+				className="bg-[url(/assets/shevica.png)] bg-[#F8C663] bg-size-[110px] bg-repeat-x bg-center w-full h-[5vh] p-0 mb-6"
 				animate={{ backgroundPositionX: ["0px", "110px"] }}
 				transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
 			/>
@@ -198,7 +198,7 @@ export const Home: React.FC = () => {
 				</div>
 
 				<div className="w-20">
-					<img src="src/assets/logo.png" alt="company logo" />
+					<img src="/assets/logo.png" alt="company logo" />
 				</div>
 
 				<div className="flex items-center gap-2">
@@ -413,7 +413,7 @@ export const Home: React.FC = () => {
 								<div>
 									<div className="w-full aspect-square bg-gradient-to-br from-[#F8C663] to-[#f5b940] flex items-center justify-center text-white text-2xl md:text-4xl font-bold">
 										<img
-											src="/public/assets/logo.png"
+											src="/assets/logo.png"
 											alt="Промоция 1"
 											className="w-full h-full object-cover"
 										/>
@@ -539,7 +539,7 @@ export const Home: React.FC = () => {
 										<div className="overflow-hidden aspect-square bg-gradient-to-br from-[#F8C663] to-[#f5b940]">
 											<img
 												alt={category}
-												src="/public/assets/logo.png"
+												src="/assets/logo.png"
 												className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110 opacity-80"
 											/>
 										</div>
@@ -591,7 +591,7 @@ export const Home: React.FC = () => {
 									<div className="overflow-hidden aspect-square bg-slate-100 relative">
 										<img
 											alt={item}
-											src="/public/assets/logo.png"
+											src="/assets/logo.png"
 											className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
 										/>
 										{index % 3 === 0 && (
@@ -665,7 +665,7 @@ export const Home: React.FC = () => {
 									<div className="flex gap-4">
 										<div className="w-24 h-24 md:w-32 md:h-32 flex-shrink-0 bg-slate-100 rounded-lg overflow-hidden">
 											<img
-												src={item.imageUrl || "/public/assets/logo.png"}
+												src={item.imageUrl || "/assets/logo.png"}
 												alt={item.name}
 												className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
 											/>

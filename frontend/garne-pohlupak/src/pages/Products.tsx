@@ -180,7 +180,7 @@ export const Products: React.FC = () => {
 										<div className="overflow-hidden aspect-square bg-slate-100">
 											<img
 												alt={product.name}
-												src={product.imageUrl || "/public/assets/logo.png"}
+												src={product.imageUrl || "/assets/logo.png"}
 												className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
 											/>
 										</div>
