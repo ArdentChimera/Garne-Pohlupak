@@ -71,3 +71,4 @@ export default defineConfig([
   },
 ])
 ```
+# Rebuild with correct API URL
