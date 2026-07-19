@@ -1,0 +1,24 @@
+{
+	"compilerOptions": {
+		"target": "ES2022",
+		"module": "CommonJS",
+		"moduleResolution": "node10",
+		"outDir": "./dist",
+		"rootDir": "./src",
+		"strict": false,
+		"noImplicitAny": false,
+		"strictNullChecks": false,
+		"strictFunctionTypes": false,
+		"strictPropertyInitialization": false,
+		"noImplicitThis": false,
+		"alwaysStrict": false,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": false,
+		"resolveJsonModule": true,
+		"ignoreDeprecations": "6.0",
+		"noEmitOnError": false
+	},
+	"include": ["src/**/*"],
+	"exclude": ["node_modules", "dist"]
+}
