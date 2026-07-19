@@ -336,3 +336,4 @@ For issues or questions:
 ---
 
 **Built with ❤️ for modern e-commerce**
+# Auto-deploy test
