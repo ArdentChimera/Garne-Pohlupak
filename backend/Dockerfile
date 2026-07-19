@@ -29,9 +29,6 @@ RUN npm ci --only=production
 # Copy built files from builder stage
 COPY --from=builder /app/dist ./dist
 
-# Copy other necessary files
-COPY --from=builder /app/src/db/migrations ./migrations
-
 # Expose port (Cloud Run will set PORT env variable)
 EXPOSE 8080
 
