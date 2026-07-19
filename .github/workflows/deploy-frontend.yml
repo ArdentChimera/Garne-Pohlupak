@@ -30,3 +30,4 @@ jobs:
           channelId: live
           # Tell Firebase where to find the target project configurations
           entryPoint: ./frontend
+          projectId: garne-pohlupak
