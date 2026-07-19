@@ -19,7 +19,9 @@ export const About: React.FC = () => {
 					>
 						Назад към начало
 					</Button>
-					<h1 className="text-2xl md:text-3xl font-bold text-slate-900">За нас</h1>
+					<h1 className="text-2xl md:text-3xl font-bold text-slate-900">
+						За нас
+					</h1>
 				</div>
 			</div>
 
@@ -30,7 +32,8 @@ export const About: React.FC = () => {
 						Традиция, която се предава от поколения
 					</h2>
 					<p className="text-lg md:text-xl text-slate-700">
-						Вече над 50 години съхраняваме и развиваме българското керамично изкуство
+						Вече над 50 години съхраняваме и развиваме българското керамично
+						изкуство
 					</p>
 				</div>
 			</div>
@@ -40,28 +43,32 @@ export const About: React.FC = () => {
 				{/* Story Section */}
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 mb-16">
 					<div>
-						<h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">Нашата история</h3>
+						<h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
+							Нашата история
+						</h3>
 						<div className="space-y-4 text-slate-700 leading-relaxed">
 							<p>
-								Гърне Похлупак е семейна работилница, основана през 1970 година в сърцето на
-								България. От три поколения създаваме автентични глинени съдове, следвайки
-								традиционни методи и техники, предавани от баща на син.
+								Гърне Похлупак е семейна работилница, основана през 1970 година
+								в сърцето на България. От три поколения създаваме автентични
+								глинени съдове, следвайки традиционни методи и техники,
+								предавани от баща на син.
 							</p>
 							<p>
-								Всяко наше изделие е ръчно изработено от местна глина, която събираме от планините
-								около нашето село. Процесът на създаване включва формоване на грънчарско колело,
-								естествено изсушаване и изпичане във фурна на дърва при висока температура.
+								Всяко наше изделие е ръчно изработено от местна глина, която
+								събираме от планините около нашето село. Процесът на създаване
+								включва формоване на грънчарско колело, естествено изсушаване и
+								изпичане във фурна на дърва при висока температура.
 							</p>
 							<p>
-								Вярваме, че храната, приготвена в глинени съдове, има неповторим вкус и аромат.
-								Нашите гърнета запазват всички полезни вещества и придават специален характер на
-								всяко ястие.
+								Вярваме, че храната, приготвена в глинени съдове, има неповторим
+								вкус и аромат. Нашите гърнета запазват всички полезни вещества и
+								придават специален характер на всяко ястие.
 							</p>
 						</div>
 					</div>
 					<div className="bg-slate-200 rounded-2xl overflow-hidden aspect-square lg:aspect-auto">
 						<img
-							src="/src/assets/logo.png"
+							src="/public/assets/logo.png"
 							alt="Нашата работилница"
 							className="w-full h-full object-cover"
 						/>
@@ -76,21 +83,29 @@ export const About: React.FC = () => {
 					<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 						<Card className="!border-slate-200 rounded-xl text-center hover:shadow-xl transition-shadow">
 							<div className="text-4xl mb-4">🏺</div>
-							<h4 className="font-bold text-lg mb-2 text-slate-900">Автентичност</h4>
+							<h4 className="font-bold text-lg mb-2 text-slate-900">
+								Автентичност
+							</h4>
 							<p className="text-slate-600">
-								Използваме само традиционни техники и материали, без компромиси с качеството
+								Използваме само традиционни техники и материали, без компромиси
+								с качеството
 							</p>
 						</Card>
 						<Card className="!border-slate-200 rounded-xl text-center hover:shadow-xl transition-shadow">
 							<div className="text-4xl mb-4">🌿</div>
-							<h4 className="font-bold text-lg mb-2 text-slate-900">Екологичност</h4>
+							<h4 className="font-bold text-lg mb-2 text-slate-900">
+								Екологичност
+							</h4>
 							<p className="text-slate-600">
-								100% природни материали и ръчна изработка без използване на химикали
+								100% природни материали и ръчна изработка без използване на
+								химикали
 							</p>
 						</Card>
 						<Card className="!border-slate-200 rounded-xl text-center hover:shadow-xl transition-shadow">
 							<div className="text-4xl mb-4">❤️</div>
-							<h4 className="font-bold text-lg mb-2 text-slate-900">Любов към занаята</h4>
+							<h4 className="font-bold text-lg mb-2 text-slate-900">
+								Любов към занаята
+							</h4>
 							<p className="text-slate-600">
 								Всяко изделие е създадено с грижа и внимание към детайлите
 							</p>
@@ -105,17 +120,42 @@ export const About: React.FC = () => {
 					</h3>
 					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
 						{[
-							{ name: "Иван Петров", role: "Майстор керамик", exp: "40 години опит" },
-							{ name: "Мария Петрова", role: "Дизайнер", exp: "25 години опит" },
-							{ name: "Георги Иванов", role: "Майстор грънчар", exp: "15 години опит" },
-							{ name: "Елена Димитрова", role: "Художник", exp: "20 години опит" },
+							{
+								name: "Иван Петров",
+								role: "Майстор керамик",
+								exp: "40 години опит",
+							},
+							{
+								name: "Мария Петрова",
+								role: "Дизайнер",
+								exp: "25 години опит",
+							},
+							{
+								name: "Георги Иванов",
+								role: "Майстор грънчар",
+								exp: "15 години опит",
+							},
+							{
+								name: "Елена Димитрова",
+								role: "Художник",
+								exp: "20 години опит",
+							},
 						].map((member, index) => (
-							<Card key={index} className="!border-slate-200 rounded-xl text-center">
+							<Card
+								key={index}
+								className="!border-slate-200 rounded-xl text-center"
+							>
 								<div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-[#F8C663] to-[#f5b940] flex items-center justify-center">
-									<span className="text-3xl text-white font-bold">{member.name.charAt(0)}</span>
+									<span className="text-3xl text-white font-bold">
+										{member.name.charAt(0)}
+									</span>
 								</div>
-								<h4 className="font-bold text-lg text-slate-900">{member.name}</h4>
-								<p className="text-[#F8C663] font-medium text-sm">{member.role}</p>
+								<h4 className="font-bold text-lg text-slate-900">
+									{member.name}
+								</h4>
+								<p className="text-[#F8C663] font-medium text-sm">
+									{member.role}
+								</p>
 								<p className="text-slate-500 text-xs mt-1">{member.exp}</p>
 							</Card>
 						))}
@@ -128,8 +168,8 @@ export const About: React.FC = () => {
 						Вижте нашите изделия
 					</h3>
 					<p className="text-slate-700 mb-6 max-w-2xl mx-auto">
-						Разгледайте нашата колекция от ръчно изработени гърнета и намерете перфектното
-						допълнение за вашата кухня
+						Разгледайте нашата колекция от ръчно изработени гърнета и намерете
+						перфектното допълнение за вашата кухня
 					</p>
 					<Button
 						type="primary"

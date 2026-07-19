@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:8080/api"
 
 // Helper function to get auth token
@@ -89,7 +90,11 @@ export const authAPI = {
 		})
 	},
 
-	getGuestToken: async (): Promise<{ success: boolean; data?: { token: string }; error?: string }> => {
+	getGuestToken: async (): Promise<{
+		success: boolean
+		data?: { token: string }
+		error?: string
+	}> => {
 		return apiRequest<{ token: string }>("/auth/guest", {
 			method: "POST",
 		})
@@ -129,14 +134,21 @@ export const productsAPI = {
 		minPrice?: number
 		maxPrice?: number
 		categoryId?: number
-	}): Promise<{ success: boolean; data?: ProductsResponse; error?: string }> => {
+	}): Promise<{
+		success: boolean
+		data?: ProductsResponse
+		error?: string
+	}> => {
 		const queryParams = new URLSearchParams()
 		if (params?.page) queryParams.append("page", params.page.toString())
 		if (params?.limit) queryParams.append("limit", params.limit.toString())
 		if (params?.search) queryParams.append("search", params.search)
-		if (params?.minPrice) queryParams.append("minPrice", params.minPrice.toString())
-		if (params?.maxPrice) queryParams.append("maxPrice", params.maxPrice.toString())
-		if (params?.categoryId) queryParams.append("categoryId", params.categoryId.toString())
+		if (params?.minPrice)
+			queryParams.append("minPrice", params.minPrice.toString())
+		if (params?.maxPrice)
+			queryParams.append("maxPrice", params.maxPrice.toString())
+		if (params?.categoryId)
+			queryParams.append("categoryId", params.categoryId.toString())
 
 		const query = queryParams.toString()
 		return apiRequest<ProductsResponse>(`/products${query ? `?${query}` : ""}`)
@@ -144,8 +156,14 @@ export const productsAPI = {
 
 	getById: async (
 		id: number
-	): Promise<{ success: boolean; data?: Product & { specs: { key: string; value: string }[] }; error?: string }> => {
-		return apiRequest<Product & { specs: { key: string; value: string }[] }>(`/products/${id}`)
+	): Promise<{
+		success: boolean
+		data?: Product & { specs: { key: string; value: string }[] }
+		error?: string
+	}> => {
+		return apiRequest<Product & { specs: { key: string; value: string }[] }>(
+			`/products/${id}`
+		)
 	},
 }
 
@@ -153,11 +171,17 @@ export const productsAPI = {
 
 export const adminAPI = {
 	// Products Management
-	getAllProducts: async (): Promise<{ success: boolean; data?: Product[]; error?: string }> => {
+	getAllProducts: async (): Promise<{
+		success: boolean
+		data?: Product[]
+		error?: string
+	}> => {
 		return apiRequest<Product[]>("/admin/products")
 	},
 
-	getProduct: async (id: number): Promise<{ success: boolean; data?: Product; error?: string }> => {
+	getProduct: async (
+		id: number
+	): Promise<{ success: boolean; data?: Product; error?: string }> => {
 		return apiRequest<Product>(`/admin/products/${id}`)
 	},
 
@@ -202,11 +226,17 @@ export const adminAPI = {
 	},
 
 	// Orders Management
-	getAllOrders: async (): Promise<{ success: boolean; data?: any[]; error?: string }> => {
+	getAllOrders: async (): Promise<{
+		success: boolean
+		data?: any[]
+		error?: string
+	}> => {
 		return apiRequest<any[]>("/admin/orders")
 	},
 
-	getOrder: async (id: number): Promise<{ success: boolean; data?: any; error?: string }> => {
+	getOrder: async (
+		id: number
+	): Promise<{ success: boolean; data?: any; error?: string }> => {
 		return apiRequest<any>(`/admin/orders/${id}`)
 	},
 
@@ -221,7 +251,11 @@ export const adminAPI = {
 	},
 
 	// Users Management
-	getAllUsers: async (): Promise<{ success: boolean; data?: any[]; error?: string }> => {
+	getAllUsers: async (): Promise<{
+		success: boolean
+		data?: any[]
+		error?: string
+	}> => {
 		return apiRequest<any[]>("/admin/users")
 	},
 }
@@ -245,14 +279,23 @@ export interface CartResponse {
 }
 
 export const cartAPI = {
-	get: async (): Promise<{ success: boolean; data?: CartResponse; error?: string }> => {
+	get: async (): Promise<{
+		success: boolean
+		data?: CartResponse
+		error?: string
+	}> => {
 		return apiRequest<CartResponse>("/cart")
 	},
 
 	add: async (data: {
 		productId: number
 		quantity: number
-	}): Promise<{ success: boolean; data?: any; error?: string; message?: string }> => {
+	}): Promise<{
+		success: boolean
+		data?: any
+		error?: string
+		message?: string
+	}> => {
 		return apiRequest<any>("/cart", {
 			method: "POST",
 			body: JSON.stringify(data),
@@ -269,13 +312,19 @@ export const cartAPI = {
 		})
 	},
 
-	remove: async (id: number): Promise<{ success: boolean; message?: string; error?: string }> => {
+	remove: async (
+		id: number
+	): Promise<{ success: boolean; message?: string; error?: string }> => {
 		return apiRequest<{ message: string }>(`/cart/${id}`, {
 			method: "DELETE",
 		})
 	},
 
-	clear: async (): Promise<{ success: boolean; message?: string; error?: string }> => {
+	clear: async (): Promise<{
+		success: boolean
+		message?: string
+		error?: string
+	}> => {
 		return apiRequest<{ message: string }>("/cart", {
 			method: "DELETE",
 		})

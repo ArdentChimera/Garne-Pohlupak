@@ -57,8 +57,12 @@ export const Products: React.FC = () => {
 					>
 						Назад към начало
 					</Button>
-					<h1 className="text-2xl md:text-3xl font-bold text-slate-900">Всички продукти</h1>
-					<p className="text-slate-600 mt-1">Ръчно изработени български гърнета</p>
+					<h1 className="text-2xl md:text-3xl font-bold text-slate-900">
+						Всички продукти
+					</h1>
+					<p className="text-slate-600 mt-1">
+						Ръчно изработени български гърнета
+					</p>
 				</div>
 			</div>
 
@@ -67,7 +71,9 @@ export const Products: React.FC = () => {
 				<Card className="!border-slate-200 rounded-xl mb-6 md:mb-8">
 					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
 						<div>
-							<label className="text-xs font-medium text-slate-700 mb-1 block">Категория</label>
+							<label className="text-xs font-medium text-slate-700 mb-1 block">
+								Категория
+							</label>
 							<Select
 								value={selectedCategory}
 								onChange={setSelectedCategory}
@@ -85,7 +91,9 @@ export const Products: React.FC = () => {
 						</div>
 
 						<div>
-							<label className="text-xs font-medium text-slate-700 mb-1 block">Обем</label>
+							<label className="text-xs font-medium text-slate-700 mb-1 block">
+								Обем
+							</label>
 							<Select
 								value={selectedSize}
 								onChange={setSelectedSize}
@@ -100,7 +108,9 @@ export const Products: React.FC = () => {
 						</div>
 
 						<div>
-							<label className="text-xs font-medium text-slate-700 mb-1 block">Цена</label>
+							<label className="text-xs font-medium text-slate-700 mb-1 block">
+								Цена
+							</label>
 							<Select
 								value={priceRange}
 								onChange={setPriceRange}
@@ -116,7 +126,9 @@ export const Products: React.FC = () => {
 						</div>
 
 						<div>
-							<label className="text-xs font-medium text-slate-700 mb-1 block">Подреди по</label>
+							<label className="text-xs font-medium text-slate-700 mb-1 block">
+								Подреди по
+							</label>
 							<Select
 								value={sortBy}
 								onChange={setSortBy}
@@ -154,7 +166,9 @@ export const Products: React.FC = () => {
 					</div>
 				) : (
 					<>
-						<p className="text-slate-600 mb-6">Показани {products.length} продукта</p>
+						<p className="text-slate-600 mb-6">
+							Показани {products.length} продукта
+						</p>
 
 						{/* Products Grid */}
 						<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
@@ -166,7 +180,7 @@ export const Products: React.FC = () => {
 										<div className="overflow-hidden aspect-square bg-slate-100">
 											<img
 												alt={product.name}
-												src={product.imageUrl || "/src/assets/logo.png"}
+												src={product.imageUrl || "/public/assets/logo.png"}
 												className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
 											/>
 										</div>
@@ -175,9 +189,12 @@ export const Products: React.FC = () => {
 									styles={{ body: { padding: "16px" } }}
 								>
 									<span className="text-xs text-[#F8C663] font-medium">
-										{product.description?.split(" ").slice(0, 2).join(" ") || "Гърнета"}
+										{product.description?.split(" ").slice(0, 2).join(" ") ||
+											"Гърнета"}
 									</span>
-									<h3 className="font-semibold text-slate-900 mt-1 mb-2">{product.name}</h3>
+									<h3 className="font-semibold text-slate-900 mt-1 mb-2">
+										{product.name}
+									</h3>
 									<div className="flex items-center gap-1 text-xs text-slate-500 mb-3">
 										<span className="text-yellow-500">★★★★★</span>
 										<span>(0)</span>
@@ -185,17 +202,17 @@ export const Products: React.FC = () => {
 									<div className="flex items-center justify-between">
 										<span className="text-xl font-bold text-[#F8C663]">
 											{(product.price / 100).toFixed(2)} лв
-								</span>
-								<Button
-									type="primary"
-									size="small"
-									className="!bg-[#F8C663] hover:!bg-[#f5b940] !border-none"
-								>
-									Добави
-								</Button>
-							</div>
-						</Card>
-					))}
+										</span>
+										<Button
+											type="primary"
+											size="small"
+											className="!bg-[#F8C663] hover:!bg-[#f5b940] !border-none"
+										>
+											Добави
+										</Button>
+									</div>
+								</Card>
+							))}
 						</div>
 					</>
 				)}

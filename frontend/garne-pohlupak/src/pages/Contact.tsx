@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react"
 import { Card, Button, Input, Form, message } from "antd"
 import { useNavigate } from "react-router-dom"
@@ -28,7 +29,9 @@ export const Contact: React.FC = () => {
 					>
 						Назад към начало
 					</Button>
-					<h1 className="text-2xl md:text-3xl font-bold text-slate-900">Свържете се с нас</h1>
+					<h1 className="text-2xl md:text-3xl font-bold text-slate-900">
+						Свържете се с нас
+					</h1>
 				</div>
 			</div>
 
@@ -40,15 +43,23 @@ export const Contact: React.FC = () => {
 							Изпратете ни съобщение
 						</h2>
 						<p className="text-slate-600 mb-6">
-							Имате въпроси? Свържете се с нас и ние ще се радваме да ви помогнем.
+							Имате въпроси? Свържете се с нас и ние ще се радваме да ви
+							помогнем.
 						</p>
 
 						<Card className="!border-slate-200 rounded-xl shadow-lg">
-							<Form form={form} layout="vertical" onFinish={onFinish} size="large">
+							<Form
+								form={form}
+								layout="vertical"
+								onFinish={onFinish}
+								size="large"
+							>
 								<Form.Item
 									label="Име"
 									name="name"
-									rules={[{ required: true, message: "Моля въведете вашето име" }]}
+									rules={[
+										{ required: true, message: "Моля въведете вашето име" },
+									]}
 								>
 									<Input placeholder="Вашето име" className="rounded-lg" />
 								</Form.Item>
@@ -69,15 +80,24 @@ export const Contact: React.FC = () => {
 									name="phone"
 									rules={[{ required: true, message: "Моля въведете телефон" }]}
 								>
-									<Input placeholder="+359 ... ... ..." className="rounded-lg" />
+									<Input
+										placeholder="+359 ... ... ..."
+										className="rounded-lg"
+									/>
 								</Form.Item>
 
 								<Form.Item
 									label="Съобщение"
 									name="message"
-									rules={[{ required: true, message: "Моля въведете съобщение" }]}
+									rules={[
+										{ required: true, message: "Моля въведете съобщение" },
+									]}
 								>
-									<TextArea rows={6} placeholder="Вашето съобщение..." className="rounded-lg" />
+									<TextArea
+										rows={6}
+										placeholder="Вашето съобщение..."
+										className="rounded-lg"
+									/>
 								</Form.Item>
 
 								<Form.Item>
@@ -100,8 +120,8 @@ export const Contact: React.FC = () => {
 							Информация за контакт
 						</h2>
 						<p className="text-slate-600 mb-6">
-							Можете да ни намерите в нашата работилница или да се свържете с нас по следните
-							начини:
+							Можете да ни намерите в нашата работилница или да се свържете с
+							нас по следните начини:
 						</p>
 
 						<div className="space-y-4">
@@ -129,7 +149,9 @@ export const Contact: React.FC = () => {
 										<Phone size={24} className="text-white" />
 									</div>
 									<div>
-										<h3 className="font-semibold text-slate-900 mb-1">Телефон</h3>
+										<h3 className="font-semibold text-slate-900 mb-1">
+											Телефон
+										</h3>
 										<p className="text-slate-600">
 											+359 888 123 456
 											<br />
@@ -161,7 +183,9 @@ export const Contact: React.FC = () => {
 										<Clock size={24} className="text-white" />
 									</div>
 									<div>
-										<h3 className="font-semibold text-slate-900 mb-1">Работно време</h3>
+										<h3 className="font-semibold text-slate-900 mb-1">
+											Работно време
+										</h3>
 										<p className="text-slate-600">
 											Понеделник - Петък: 9:00 - 18:00
 											<br />
@@ -187,32 +211,40 @@ export const Contact: React.FC = () => {
 								Правите ли специални поръчки?
 							</h3>
 							<p className="text-slate-600">
-								Да, приемаме специални поръчки за гърнета с индивидуален размер и дизайн. Срокът
-								за изпълнение е 2-3 седмици.
+								Да, приемаме специални поръчки за гърнета с индивидуален размер
+								и дизайн. Срокът за изпълнение е 2-3 седмици.
 							</p>
 						</Card>
 
 						<Card className="!border-slate-200 rounded-xl">
-							<h3 className="font-bold text-lg mb-2 text-slate-900">Как да грижа за керамиката?</h3>
+							<h3 className="font-bold text-lg mb-2 text-slate-900">
+								Как да грижа за керамиката?
+							</h3>
 							<p className="text-slate-600">
-								Препоръчваме ръчно измиване с топла вода и сапун. Избягвайте резки температурни
-								промени и използването на абразивни препарати.
+								Препоръчваме ръчно измиване с топла вода и сапун. Избягвайте
+								резки температурни промени и използването на абразивни
+								препарати.
 							</p>
 						</Card>
 
 						<Card className="!border-slate-200 rounded-xl">
-							<h3 className="font-bold text-lg mb-2 text-slate-900">Доставяте ли до адрес?</h3>
+							<h3 className="font-bold text-lg mb-2 text-slate-900">
+								Доставяте ли до адрес?
+							</h3>
 							<p className="text-slate-600">
-								Да, доставяме до цялата страна. Безплатна доставка за поръчки над 100 лв. Срок на
-								доставка 2-5 работни дни.
+								Да, доставяме до цялата страна. Безплатна доставка за поръчки
+								над 100 лв. Срок на доставка 2-5 работни дни.
 							</p>
 						</Card>
 
 						<Card className="!border-slate-200 rounded-xl">
-							<h3 className="font-bold text-lg mb-2 text-slate-900">Имате ли гаранция?</h3>
+							<h3 className="font-bold text-lg mb-2 text-slate-900">
+								Имате ли гаранция?
+							</h3>
 							<p className="text-slate-600">
-								Всички наши продукти имат 12 месеца гаранция срещу производствени дефекти.
-								Можете да върнете или замените продукт в рамките на 14 дни.
+								Всички наши продукти имат 12 месеца гаранция срещу
+								производствени дефекти. Можете да върнете или замените продукт в
+								рамките на 14 дни.
 							</p>
 						</Card>
 					</div>
@@ -226,13 +258,16 @@ export const Contact: React.FC = () => {
 						Нашето местоположение
 					</h2>
 					<p className="text-slate-600 mb-8 text-center max-w-2xl mx-auto">
-						Посетете ни в нашата работилница и вижте как се раждават автентичните български гърнета
+						Посетете ни в нашата работилница и вижте как се раждават
+						автентичните български гърнета
 					</p>
 					<Card className="!border-slate-200 rounded-xl overflow-hidden shadow-lg">
 						<div className="bg-slate-200 h-96 flex items-center justify-center">
 							<div className="text-center">
 								<MapPin size={48} className="text-slate-400 mx-auto mb-4" />
-								<p className="text-slate-500 text-lg">Карта на местоположението</p>
+								<p className="text-slate-500 text-lg">
+									Карта на местоположението
+								</p>
 								<p className="text-slate-400 text-sm mt-2">
 									ул. "Грънчарска" 15, с. Бусинци, област София
 								</p>
