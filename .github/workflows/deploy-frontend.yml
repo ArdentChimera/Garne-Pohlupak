@@ -1,38 +1,32 @@
-name: Deploy to Firebase Hosting
+name: Deploy Frontend to Firebase Hosting
 
 on:
   push:
     branches:
       - main
     paths:
-      - "frontend/**"
+      - "frontend/**" # Only trigger when frontend files change
 
 jobs:
-  deploy:
+  build_and_deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      # Upgrade to v4 to fix the Node deprecation warnings
+      - uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: "20"
+      - name: Install Dependencies and Build
+        # This line forces the runner to step into your frontend folder
+        working-directory: ./frontend
+        run: |
+          npm ci
+          npm run build
 
-      - name: Install dependencies
-        working-directory: frontend/garne-pohlupak
-        run: npm ci
-
-      - name: Build
-        working-directory: frontend/garne-pohlupak
-        run: npm run build
-        env:
-          VITE_API_URL: ${{ secrets.VITE_API_URL }}
-
-      - name: Deploy to Firebase
+      - name: Deploy to Firebase Hosting
+        # Upgrade to v3 to stay up to date
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_GARNE_POHLUPAK }}"
           channelId: live
-          projectId: garne-pohlupak-prod
-          entryPoint: frontend/garne-pohlupak
+          # Tell Firebase where to find the target project configurations
+          entryPoint: ./frontend
