@@ -20,11 +20,14 @@ const app = express()
 app.set("trust proxy", true)
 const httpServer = createServer(app)
 
-// Allow multiple origins for development
+// Allow multiple origins for development and production
 const allowedOrigins = [
 	"http://localhost:3030",
 	"http://localhost:5173",
 	"http://localhost:5174",
+	"https://garne-pohlupak.web.app",
+	"https://garne-pohlupak.firebaseapp.com",
+	"https://garne-pohlupak.com",
 	process.env.FRONTEND_URL,
 ].filter(Boolean)
 
@@ -53,7 +56,7 @@ app.use(
 
 app.use(express.json())
 
-// Rate limiting
+// Rate limiting with Cloud Run support
 const limiter = rateLimit({
 	windowMs: 15 * 60 * 1000, // 15 minutes
 	max: 100, // Limit each IP to 100 requests per windowMs
@@ -61,6 +64,8 @@ const limiter = rateLimit({
 		success: false,
 		error: "Too many requests, please try again later",
 	},
+	standardHeaders: true,
+	legacyHeaders: false,
 })
 
 const authLimiter = rateLimit({
@@ -70,6 +75,8 @@ const authLimiter = rateLimit({
 		success: false,
 		error: "Too many attempts, please try again later",
 	},
+	standardHeaders: true,
+	legacyHeaders: false,
 })
 
 app.use("/api/", limiter)
