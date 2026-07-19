@@ -8,7 +8,7 @@ steps:
       - 'gcr.io/$PROJECT_ID/garne-pohlupak-backend:$COMMIT_SHA'
       - '-t'
       - 'gcr.io/$PROJECT_ID/garne-pohlupak-backend:latest'
-      - '.'
+      - 'backend'
 
   # Push the Docker image to Container Registry
   - name: 'gcr.io/cloud-builders/docker'
