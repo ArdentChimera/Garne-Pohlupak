@@ -66,6 +66,7 @@ const limiter = rateLimit({
 	},
 	standardHeaders: true,
 	legacyHeaders: false,
+	validate: { trustProxy: false }, // Disable trust proxy validation for Cloud Run
 })
 
 const authLimiter = rateLimit({
@@ -77,6 +78,7 @@ const authLimiter = rateLimit({
 	},
 	standardHeaders: true,
 	legacyHeaders: false,
+	validate: { trustProxy: false }, // Disable trust proxy validation for Cloud Run
 })
 
 app.use("/api/", limiter)
